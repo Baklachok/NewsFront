@@ -1,47 +1,94 @@
 /* Пример базовой стилизации по БЭМ */
 
 /* Header */
+body {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
 .header {
     background-color: #003366;
     color: #fff;
     padding: 10px 0;
-}
-.header__logo a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 24px;
-    font-weight: bold;
-}
-.header__nav {
-    margin-top: 10px;
-}
-.nav-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-}
-.nav-list__item + .nav-list__item {
-    margin-left: 15px;
-}
-.nav-list__link {
-    color: #fff;
-    text-decoration: none;
+    width: 100%;
 }
 
 /* Main content */
+.col-md-4 {
+    margin-top: 40px; /* отступ, равный высоте заголовка в левой колонке */
+}
+
 .main {
     padding: 20px 0;
 }
-.news__item {
-    margin-bottom: 20px;
+
+.news-block__title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #003366;
+    margin-bottom: 15px;
+    margin-left: 10px;
 }
-.news__title {
-    font-size: 20px;
+
+#news-container .news-small {
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+}
+
+#news-container .news-small:hover {
+    transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+    #news-container {
+        gap: 20px;
+    }
+}
+
+.news-featured__link{
+    color: inherit;          /* унаследовать цвет родительского элемента */
+    text-decoration: none;   /* убрать подчеркивание */
+}
+
+.news-featured__link:hover {
+    text-decoration: underline; /* подчеркивание при наведении */
+}
+
+.news-featured__title {
+    text-align: center;
+    font-size: 35px; /* или другой размер, который вам нужен */
     color: #003366;
 }
-.news__text {
-    font-size: 16px;
+
+/* Показываем все новости по умолчанию */
+.news-small {
+    display: block;
+}
+
+/* На экранах меньше 992px показываем только первые 4 */
+@media (max-width: 991.98px) {
+    .news-small:nth-of-type(n+5) {
+        display: none;
+    }
+}
+
+/* На экранах меньше 768px — только 3 */
+@media (max-width: 767.98px) {
+    .news-small:nth-of-type(n+4) {
+        display: none;
+    }
+}
+
+/* На экранах меньше 576px — только 2 */
+@media (max-width: 575.98px) {
+    .news-small:nth-of-type(n+3) {
+        display: none;
+    }
 }
 
 /* Sidebar */
@@ -62,8 +109,5 @@
     text-align: center;
     padding: 15px 0;
     margin-top: 20px;
-    position: fixed;
-    left: 0;
-    bottom: 0;
     width: 100%;
 }

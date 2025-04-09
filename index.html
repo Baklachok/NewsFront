@@ -3,123 +3,172 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>
-    Типо новости
-  </title>
-  <!-- Подключение Bootstrap CSS -->
+  <meta name="description" content="Новостной портал с актуальными материалами">
+  <title>Типа новости</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <!-- Подключение основного стиля по БЭМ -->
   <link rel="stylesheet" href="/style.css">
 </head>
-<body>
-<!-- Header -->
+<body class="body">
+
 <header class="header">
-  <div class="container">
-    <div class="header__logo">
-      <a href="#">Типо новости</a>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Типа новости</a>
+
+      <!-- Бургер-меню для мобильных -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Навигация -->
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Новости</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+              Рубрики
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Политика</a></li>
+              <li><a class="dropdown-item" href="#">Экономика</a></li>
+              <li><a class="dropdown-item" href="#">Спорт</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
-    <nav class="header__nav">
-      <ul class="nav-list">
-        <li class="nav-list__item">
-          <a href="#" class="nav-list__link">
-            Главная
-          </a>
-        </li>
-        <li class="nav-list__item">
-          <a href="#" class="nav-list__link">
-            Новости
-          </a>
-        </li>
-        <li class="nav-list__item">
-          <a href="#" class="nav-list__link">
-            Политика
-          </a>
-        </li>
-        <li class="nav-list__item">
-          <a href="#" class="nav-list__link">
-            Экономика
-          </a>
-        </li>
-        <li class="nav-list__item">
-          <a href="#" class="nav-list__link">
-            Спорт
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </div>
+  </nav>
 </header>
 
 <!-- Main Content -->
 <main class="main">
-  <div class="container">
-    <!-- Используем Bootstrap сетку для адаптивной вёрстки -->
-    <div class="row">
-      <!-- Основная новостная колонка -->
-      <section class="news col-12 col-md-8">
-        <article class="news__item">
-          <h2 class="news__title">
-            Заголовок новости 1
-          </h2>
-          <p class="news__text">
-            Описание новости 1. Здесь приводится краткое содержание новости.
-          </p>
-        </article>
-        <article class="news__item">
-          <h2 class="news__title">
-            Заголовок новости 2
-          </h2>
-          <p class="news__text">
-            Описание новости 2. Здесь приводится краткое содержание новости.
-          </p>
-        </article>
-        <!-- Другие новости -->
-      </section>
+  <div class="container my-4">
+  <!-- Основная строка -->
+  <div class="row">
+    <!-- Левая колонка: одна новость с фото -->
+    <div class="col-md-8 mb-3">
+      <article class="news-featured">
+        <h2 class="news-featured__title">
+          <a href="article1.html" class="news-featured__link">
+            Путин подписал указ бахнуть полторашку пива в эту пятницу
+          </a>
+        </h2>
+        <img class="img-fluid news-featured__img" src="/images/putin.jpg" alt="Главная новость">
+      </article>
+    </div>
+      <div class="col-md-4">
+        <h3 class="news-block__title">Главное</h3>
+        <div class="row" id="news-container">
+          <!-- Список новостей -->
+          <div class="col-12 col-md-12 mb-3">
+            <article class="news-small">
+              <h3 class="h5 card-title">
+                <a href="news1.html"  class="text-decoration-none">
+                  Новость 1
+                </a>
+              </h3>
+              <p class="card-text text-muted">
+                Краткое описание новости 1.
+              </p>
+            </article>
+          </div>
+          <div class="col-12 col-md-12 mb-3">
+            <article class="news-small">
+              <h3 class="h5 card-title">
+                <a href="news2.html" class="text-decoration-none">
+                  Новость 2
+                </a>
+              </h3>
+              <p class="card-text text-muted">
+                Краткое описание новости 2.
+              </p>
+            </article>
+          </div>
+          <div class="col-12 col-md-12 mb-3">
+            <article class="news-small">
+              <h3 class="h5 card-title">
+                <a href="news3.html" class="text-decoration-none">
+                  Новость 3
+                </a>
+              </h3>
+              <p class="card-text text-muted">
+                Краткое описание новости 3.
+              </p>
+            </article>
+          </div>
+          <div class="col-12 col-md-12 mb-3">
+            <article class="news-small">
+              <h3 class="h5 card-title">
+                <a href="news4.html" class="text-decoration-none">
+                  Новость 4
+                </a>
+              </h3>
+              <p class="card-text text-muted">
+                Краткое описание новости 4.
+              </p>
+            </article>
+          </div>
+          <div class="col-12 col-md-12 mb-3">
+            <article class="news-small">
+              <h3 class="h5 card-title">
+                <a href="news5.html" class="text-decoration-none">
+                  Новость 5
+                </a>
+              </h3>
+              <p class="card-text text-muted">
+                Краткое описание новости 5.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- Боковая колонка -->
-    <aside class="sidebar col-12 col-md-4">
-      <div class="sidebar__widget">
-        <h3 class="sidebar__title">
-          Популярное
-        </h3>
-        <ul class="sidebar__list">
-          <li class="sidebar__list-item">
-            <a href="#">
-              Новость A
-            </a>
-          </li>
-          <li class="sidebar__list-item">
-            <a href="#">
-              Новость B
-            </a>
-          </li>
-          <li class="sidebar__list-item">
-            <a href="#">
-              Новость C
-            </a>
-          </li>
-        </ul>
-      </div>
-    </aside>
-  </div>
+<!--    <aside class="sidebar col-12 col-md-4">-->
+<!--      <div class="sidebar__widget">-->
+<!--        <h3 class="sidebar__title">-->
+<!--          Популярное-->
+<!--        </h3>-->
+<!--        <ul class="sidebar__list">-->
+<!--          <li class="sidebar__list-item">-->
+<!--            <a href="#">-->
+<!--              Новость A-->
+<!--            </a>-->
+<!--          </li>-->
+<!--          <li class="sidebar__list-item">-->
+<!--            <a href="#">-->
+<!--              Новость B-->
+<!--            </a>-->
+<!--          </li>-->
+<!--          <li class="sidebar__list-item">-->
+<!--            <a href="#">-->
+<!--              Новость C-->
+<!--            </a>-->
+<!--          </li>-->
+<!--        </ul>-->
+<!--      </div>-->
+<!--    </aside>-->
   </div>
 </main>
 
 <!-- Footer -->
-<footer class="footer">
+<footer class="footer py-4">
   <div class="container">
-    <p class="footer__text">
-      Здесь лежит футер, я его не придумал...
-    </p>
+    <div class="row">
+      <div class="col-md-12">
+        <p class="mb-0">Здесь лежит футер, но я его не придумал(</p>
+      </div>
+    </div>
   </div>
 </footer>
 
-<!-- Подключение JavaScript файлов -->
-<!-- Bootstrap JS, Popper.js и jQuery -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<!-- Основной JS файл -->
-<script src="src/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./src/main.js" type="module"></script>
 </body>
 </html>

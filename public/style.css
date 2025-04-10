@@ -178,6 +178,19 @@ body {
     color: var(--color-primary);
 }
 
+.news-article__reactions {
+    text-align: center; /* Центрируем кнопки */
+    margin-top: 20px;
+}
+
+/* Стили для кнопок реакции */
+.reaction-btn {
+    font-size: 16px;
+    padding: 8px 16px;
+    margin: 0 5px;  /* Отступ между кнопками */
+    cursor: pointer;
+}
+
 .footer {
     background-color: #003366;
     color: #fff;

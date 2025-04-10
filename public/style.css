@@ -19,14 +19,37 @@ body {
     z-index: 100;
 }
 
-/* Main content */
-.col-md-4 {
-    margin-top: 40px; /* отступ, равный высоте заголовка в левой колонке */
-}
-
 .main {
     flex: 1;
     padding: 2rem 0;
+}
+
+.col-md-4 {
+    margin-top: 40px;
+}
+
+.footer {
+    background-color: #003366;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.news-featured__title {
+    text-align: center;
+    font-size: 35px;
+    color: #003366;
+}
+
+.news-featured__link{
+    color: inherit;
+    text-decoration: none;
+}
+
+.news-featured__link:hover {
+    text-decoration: underline;
 }
 
 .news-block__title {
@@ -50,121 +73,9 @@ body {
     transform: translateY(-2px);
 }
 
-@media (min-width: 768px) {
-    #news-container {
-        gap: 20px;
-    }
-}
-
-.news-featured__link{
-    color: inherit;          /* унаследовать цвет родительского элемента */
-    text-decoration: none;   /* убрать подчеркивание */
-}
-
-.news-featured__link:hover {
-    text-decoration: underline; /* подчеркивание при наведении */
-}
-
-.news-featured__title {
-    text-align: center;
-    font-size: 35px; /* или другой размер, который вам нужен */
-    color: #003366;
-}
-
-/* Показываем все новости по умолчанию */
 .news-small {
     display: block;
 }
-
-/* На экранах меньше 992px показываем только первые 4 */
-@media (max-width: 991.98px) {
-    .news-small:nth-of-type(n+5) {
-        display: none;
-    }
-}
-
-/* На экранах меньше 768px — только 3 */
-@media (max-width: 767.98px) {
-    .news-small:nth-of-type(n+4) {
-        display: none;
-    }
-}
-
-/* На экранах меньше 576px — только 2 */
-@media (max-width: 575.98px) {
-    .news-small:nth-of-type(n+3) {
-        display: none;
-    }
-}
-
-/* Базовая стилизация для блока "Популярное" */
-
-/* Стили для списка */
-.sidebar__list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-/* Каждый элемент списка */
-.sidebar__list-item {
-    margin-bottom: 15px;
-}
-
-/* Стили для отдельного блока новости */
-.popular-news-item {
-    display: flex;
-    align-items: center;
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-/* Левая секция – название новости */
-.popular-news__title {
-    flex: 1;
-    font-size: 16px;
-    font-weight: bold;
-    color: #003366;
-}
-
-.popular-news__desc {
-    flex: 2;
-    font-size: 14px;
-    color: #333;
-    margin: 0 10px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;           /* Обязательный блок для веб-кита */
-    -webkit-line-clamp: 3;          /* Ограничение 2 строками */
-    -webkit-box-orient: vertical;   /* Вертикальное размещение */
-}
-
-
-/* Правая секция – изображение новости */
-.popular-news__img {
-    flex: 0 0 100px;
-    height: 100px;
-}
-
-.popular-news__img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 4px;
-}
-
-/* Стилизация для ссылок (заголовков новостей) */
-.popular-news__title a {
-    color: inherit;
-    text-decoration: none;
-}
-
-.popular-news__title a:hover {
-    text-decoration: underline;
-}
-
 
 .sidebar {
     background: var(--color-white);
@@ -178,24 +89,68 @@ body {
     color: var(--color-primary);
 }
 
-.news-article__reactions {
-    text-align: center; /* Центрируем кнопки */
-    margin-top: 20px;
+.sidebar__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-/* Стили для кнопок реакции */
+.sidebar__list-item {
+    margin-bottom: 15px;
+}
+
+.popular-news-item {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.popular-news__title {
+    flex: 1;
+    font-size: 16px;
+    font-weight: bold;
+    color: #003366;
+}
+
+.popular-news__title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.popular-news__title a:hover {
+    text-decoration: underline;
+}
+
+.popular-news__desc {
+    flex: 2;
+    font-size: 14px;
+    color: #333;
+    margin: 0 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.popular-news__img {
+    flex: 0 0 100px;
+    height: 100px;
+}
+
+.popular-news__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
 .reaction-btn {
     font-size: 16px;
     padding: 8px 16px;
-    margin: 0 5px;  /* Отступ между кнопками */
+    margin: 0 5px;
     cursor: pointer;
-}
-
-.footer {
-    background-color: #003366;
-    color: #fff;
-    text-align: center;
-    padding: 15px 0;
-    margin-top: 20px;
-    width: 100%;
 }

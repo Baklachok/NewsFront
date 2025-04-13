@@ -3,26 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Новостной портал с актуальными материалами">
     <title>Типа новости</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/style.css">
 </head>
-<body class="body">
+<body class="flex-column">
 
 <div id="header-placeholder"></div>
 
-<main class="main flex-grow-1">
+<main>
     <article class="container my-5">
         <div class="row justify-content-center">
             <div class="col-lg-8">
-
-                <h1 class="article-title mb-4">
+                <h1>
                     Путин подписал указ бахнуть полторашку пива в эту пятницу
                 </h1>
-
-
-                <figure class="article-image mb-4">
+                <figure>
                     <img src="/images/putin.jpg"
                          class="img-fluid rounded-3"
                          width="900"
@@ -31,27 +27,31 @@
                         Фото: Которое было 1 в поиске
                     </figcaption>
                 </figure>
-
-                <div class="article-content">
-                    <p class="lead">Владимир Путин подписал закон, призывающий выпить пиво в эту пятницу объемом полтора литра.</p>
-
-                    <p>Соответствующий документ размещен нигде.</p>
-
-                    <blockquote class="blockquote my-4">
-                        <p class="mb-0">"Чет я устал на этой неделе, надо отдохнуть"</p>
-                        <footer class="blockquote-footer mt-2">Владимир Путин</footer>
+                <div>
+                    <p class="lead">
+                        Владимир Путин подписал закон, призывающий выпить пиво в эту пятницу объемом полтора литра.
+                    </p>
+                    <p>
+                        Соответствующий документ размещен нигде.
+                    </p>
+                    <blockquote class="blockquote">
+                        <p>
+                            "Чет я устал на этой неделе, надо отдохнуть"
+                        </p>
+                        <footer class="blockquote-footer">
+                            Владимир Путин
+                        </footer>
                     </blockquote>
                 </div>
-
-                <div class="article-reactions mt-5">
+                <div class="mt-5">
                     <div class="btn-group">
                         <button id="likeBtn"
-                                class="btn btn-outline-primary reaction-btn"
+                                class="btn reaction-btn"
                                 data-reaction="like">
                             👍 <span id="likeCount">0</span>
                         </button>
                         <button id="dislikeBtn"
-                                class="btn btn-outline-danger reaction-btn"
+                                class="btn reaction-btn"
                                 data-reaction="dislike">
                             👎 <span id="dislikeCount">0</span>
                         </button>
